@@ -13,6 +13,6 @@ markdown_extensions:
       linenums: true
 
 nav:
-  - 'Tema 5': 'README.md'
+  - 'Tema 5':
     - 'Práctica Git y GitHub - 1': 'index1.md'
     - 'Práctica Git y GitHub - 2': 'index2.md'
