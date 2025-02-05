@@ -1,6 +1,3 @@
-# Ignoramos este archivo también
-.gitignore
-
 # Ignorar archivo privado.txt
 privado.txt
 
