@@ -1,0 +1,1210 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jpradillo.github.io/DEAW/index1/">
+      
+      
+      
+        <link rel="next" href="../index2/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+    
+    
+      
+        <title>Práctica Git y GitHub - 1 - Despliegue de aplicaciones web</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d7758b05.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deaw" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Despliegue de aplicaciones web" class="md-header__button md-logo" aria-label="Despliegue de aplicaciones web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Despliegue de aplicaciones web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Práctica Git y GitHub - 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Despliegue de aplicaciones web" class="md-nav__button md-logo" aria-label="Despliegue de aplicaciones web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Despliegue de aplicaciones web
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tema 5
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Tema 5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Práctica Git y GitHub - 1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Práctica Git y GitHub - 1
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#respositorios-de-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Respositorios de GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Respositorios de GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-un-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de un repositorio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clonar-el-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clonar el repositorio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clonar el repositorio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opcion-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opción 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcion-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opción 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadir-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir archivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignorar-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ignorar archivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tags
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de tags
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-tags-creados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ver tags creados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subir-un-tag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subir un tag
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subir-todos-los-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subir todos los tags
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrar-un-tag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borrar un tag
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuenta-de-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuenta de GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cuenta de GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#foto-de-perfil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foto de perfil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-en-dos-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autenticación en dos pasos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usuarios-de-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usuarios de GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usuarios de GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seguir-otros-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seguir otros repositorios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-a-favoritos-otro-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir a favoritos otro repositorio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-colaborador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir colaborador
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Merge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merge-de-ramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge de ramas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-con-conflicto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge con conflicto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listado-de-ramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listado de ramas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arreglo-de-conflictos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arreglo de conflictos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#borrar-ramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borrar ramas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listado-de-cambios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listado de cambios
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica Git y GitHub - 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#respositorios-de-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Respositorios de GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Respositorios de GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-un-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de un repositorio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clonar-el-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clonar el repositorio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clonar el repositorio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opcion-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opción 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcion-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opción 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadir-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir archivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignorar-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ignorar archivos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tags
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de tags
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-tags-creados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ver tags creados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subir-un-tag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subir un tag
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subir-todos-los-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subir todos los tags
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrar-un-tag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borrar un tag
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuenta-de-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuenta de GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cuenta de GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#foto-de-perfil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foto de perfil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-en-dos-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autenticación en dos pasos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usuarios-de-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usuarios de GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usuarios de GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seguir-otros-repositorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seguir otros repositorios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-a-favoritos-otro-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir a favoritos otro repositorio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-colaborador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir colaborador
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Merge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merge-de-ramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge de ramas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-con-conflicto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merge con conflicto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listado-de-ramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listado de ramas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arreglo-de-conflictos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arreglo de conflictos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#borrar-ramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borrar ramas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listado-de-cambios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listado de cambios
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="deaw">DEAW</h1>
+<p>En este documento se detallan los pasos necesarios para realizar ejercicios básicos de Git y Github</p>
+<h2 id="respositorios-de-github">Respositorios de GitHub</h2>
+<p>Un repositorio de GitHub es un espacio donde puedes almacenar, organizar y gestionar proyectos. Básicamente es como un contenedor para archivos de código, documentación y recursos relacionados con un proyecto. Es esencial para gestionar y colaborar en proyectos de software de forma eficiente.</p>
+<h3 id="creacion-de-un-repositorio">Creación de un repositorio</h3>
+<ol>
+<li>Acceder a tu <a href="https://github.com/login">cuenta de GitHub</a>.</li>
+<li>Crear un nuevo repositorio, en este caso <strong>DEAW</strong>.</li>
+<li>Para ello simplemente tenemos que darle al icono de nuestro perfil en la esquina superior derecha de la pantalla.</li>
+<li>Hacer click en donde pone <code>Your repositories</code></li>
+<li>Clicar en <code>New</code></li>
+<li>Rellenar los campos necesarios<ol>
+<li><strong><code>Owner*</code></strong> - Nuestro usuario de GitHub</li>
+<li><strong><code>Repository name*</code></strong> - DEAW</li>
+</ol>
+</li>
+<li>Asegurarse (en este caso) de que sea público y no tenga archivos por defecto.</li>
+<li>Clicamos donde dice <code>Create repository</code> en la esquina inferior derecha.</li>
+</ol>
+<p><img alt="Nuevo repositorio" src="../assets/images/image.png" />
+<img alt="Repositorio vacío" src="../assets/images/image1.png" /></p>
+<h3 id="clonar-el-repositorio">Clonar el repositorio</h3>
+<p>Una vez creado el repositorio, lo que haremos será clonarlo y de esta manera poder tenerlo en local y así realizar los cambios que sean necesarios. Para ello seguirimos los siguientes pasos:</p>
+<h5 id="opcion-1">Opción 1</h5>
+<p>En el caso de no haber añadido ningún archivo nos mostrará la siguiente ventana:
+<img alt="Repositorio vacío" src="../assets/images/image3.png" /></p>
+<p>En este caso simplemente tendremos que ir siguiendo los pasos que se indican en el repositorio, los cuales son:</p>
+<ol>
+<li><code>git init</code> - Crear un repositorio en nuestra máquina local. Este repositorio se creará en la carpeta en la que nos encontremos al realizar este comando.</li>
+<li><code>git remote add URL_DEL_REPOSITORIO</code> - Conectamos nuestro repositorio local al repositorio remoto de GitHub. </li>
+</ol>
+<h5 id="opcion-2">Opción 2</h5>
+<p>En el caso de que hayamos añadido algún archivo README: 
+1. Clicar en la parte de nuestro repositorio que pone <strong><code>Code</code></strong>.
+2. En el apartado <strong><code>HTTPS</code></strong> lo que haremos será copiar el enlace de nuestro repositorio. Por ejemplo en mi caso es <a href="https://github.com/JPradillo/DEAW.git">así</a>.
+3. Ahora en nuestra <strong>terminal Bash</strong> escribimos el comando <code>git clone [ENLACE QUE HEMOS COPIADO]</code>
+4. Una vez clonado el repositorio lo que tenemos que hacer es cambiar al directorio que se ha creado con el <code>.git</code>, para ello tenemos que ejecutar el comando <code>cd [NOMBRE_DEL_RESPOSITORIO]</code>.</p>
+<p><img alt="Clonación del repositorio" src="../assets/images/image2.png" />
+<img alt="Clonación del repositorio" src="../assets/images/image4.png" /></p>
+<h2 id="anadir-archivos">Añadir archivos</h2>
+<p>Para poder hacer que los archivos que creemos en este directorio se suban al repositorio simplemente tenemos que ejecutar 3 comandos muy simples.</p>
+<ol>
+<li><code>git add [NOMBRE_ARCHIVO]</code> - Añade todos los archivos modificados al repositorio local.</li>
+<li><code>git commit -m "Comentario"</code> - Hacer un commit para poder subir los archivos asignandoles un <code>id</code>. <strong>ESTE PASO ES OBLIGATORIO</strong>.</li>
+<li><code>git push origin [RAMA]</code> - Sube los cambios a la rama que queramos asignarle (siempre que exista anteriormente) del repositorio remoto.</li>
+</ol>
+<blockquote>
+<p>ℹ️Info</p>
+<p>Estos pasos se pueden resumir en dos comandos solamente, los cuales son:</p>
+<p><code>git commit -a -m "Comentario"</code></p>
+<p><code>git push origin [RAMA]</code> </p>
+<p>Esto lo que hace es añadir todos los archivos al mismo commit y los sube al repositorio remoto. Esto también se puede hacer con el comando <code>git add .</code></p>
+</blockquote>
+<p>En este apartado lo que hicimos fue primero crear un archivo README con un pequeño texto y posteriormente lo añadí al repositorio con un commit que decía <code>Comenzamos con los ejercicios de Git</code></p>
+<p><img alt="Añadir archivo" src="../assets/images/image5.png" />
+<img alt="Git" src="../assets/images/image6.png" /></p>
+<h2 id="ignorar-archivos">Ignorar archivos</h2>
+<p>En GitHub todos los que se indiquen en un archivo llamado <code>.gitignore</code> provoca que estos no sean subidos al repositorio remoto. En mi caso son un archivo y un documento llamados <code>privado.txt</code> y <code>privada</code>. Para ello seguimos los siguientes pasos:</p>
+<ol>
+<li><code>touch privado.txt</code> - Creamos un archivo <code>privado.txt</code>. </li>
+<li><code>mkdir privada</code> - Creamos la carpeta <code>privada</code>.</li>
+<li><code>nano .gitignore</code> - Abrimos el archivo <code>.gitignore</code> con nano para editar su contenido.</li>
+<li>Añadimos los nombres de los elementos que no queremos subir al repositorio.</li>
+</ol>
+<p><img alt="Elementos privados" src="../assets/images/image7.png" />
+<img alt=".gitignore" src="../assets/images/image8.png" /></p>
+<p>Una vez hecho esto, cada vez que yo haga un push al repositorio remoto, estos dos documentos quedarán excluidos del commit por lo que no se subirán a dicho repositorio.</p>
+<p>Para comprobar que realmente no se han subido, una vez hecho el commit ejecutamos el comando <code>git status</code>. Esto lo que hará será mostrarnos las diferencias entre el repositorio local y el remoto y de esta manera poder ver los archivos que vamos a subir a GitHub o aquellos que han sido modificados.</p>
+<p><img alt="git status" src="../assets/images/image9.png" /></p>
+<h2 id="tags">Tags</h2>
+<p>En este apartado primero crearemos el archivo <code>1.txt</code> y de esta manera tener controlados los tags que añadamos.</p>
+<p><img alt="1.txt" src="../assets/images/image10.png" /></p>
+<h3 id="creacion-de-tags">Creación de tags</h3>
+<p>Para crear un tag es muy sencillo, simplemente tenemos que ejecutar el comando <code>git tag [NOMBRE_DEL_TAG]</code>. En mi caso, mi tag se llama <code>v0.1</code> ya que es la primera versión, asi que tuve que ejecutar el comando <code>git tag v0.1</code>.</p>
+<h3 id="ver-tags-creados">Ver tags creados</h3>
+<p>Para poder visualizar todos nuestros tags tenemos que ejecutar el comando <code>git tag</code> lo que nos mostrará una lista con el nombre de todos nuestros tags creados.</p>
+<p><img alt="tags" src="../assets/images/image11.png" /></p>
+<h3 id="subir-un-tag">Subir un tag</h3>
+<p>A la hora de subir un tag lo que tenemos que hacer primero es pushear este tag al repositorio remoto ejecutando el comando <code>git push origin v0.1</code> en mi caso.</p>
+<h3 id="subir-todos-los-tags">Subir todos los tags</h3>
+<p>Si quieres subir varios tags a la vez, lo que tienes que hacer es ejecutar el comando <code>git push --tags</code> lo que hará que se suban todos los tags que tengas en ese momento en el repositorio local.</p>
+<h3 id="borrar-un-tag">Borrar un tag</h3>
+<p>Para borrar un tag tienes que ejecutar el comando <code>git tag -d v0.1</code> por ejemplo en mi caso si quieres borrarlo localmente. </p>
+<p>En el caso de que quieras hacerlo con un tag que ya fue subido al repositorio remoto tendrías que ejecutar el comando <code>git push origin --delete v0.1</code></p>
+<p><img alt="push" src="../assets/images/image12.png" /></p>
+<h2 id="cuenta-de-github">Cuenta de GitHub</h2>
+<p>Es importante en el mundo del desarrollo tener actualizados nuestros perfiles, y GitHub no va a ser distinto. Por lo tanto en esta práctica se mostrará cómo hacer para tener tu cuenta actualizada.</p>
+<h3 id="foto-de-perfil">Foto de perfil</h3>
+<p>Para poner una foto en nuestro perfil de GitHub tenemos que seguir los siguientes pasos:</p>
+<ol>
+<li>Acceder a <a href="https://github.com/login">nuestra cuenta de GitHub</a></li>
+<li>Acceder a la configuración del perfil</li>
+<li>Hacemos clic en nuestro avatar (esquina superior derecha)</li>
+<li>Seleccionamos la opción de <code>Settings</code></li>
+<li>En el menú lateral izquierda hacemos click en el apartado que dice <code>Public profile</code></li>
+<li>Junto a nuestro avatar actual hacemos click en donde pone <code>Upload new picture</code></li>
+<li>Seleccionamos la imagen que queramos poner de perfil (Algo que nos represente)</li>
+<li>Guardamos los cambios</li>
+</ol>
+<p>En mi caso, ya lo tenía cambiado de antes, pero mostraré los pasos a seguir.</p>
+<p><img alt="Paso 1" src="../assets/images/image13.png" />
+<img alt="Paso 2" src="../assets/images/image14.png" />
+<img alt="Paso 3" src="../assets/images/image16.png" />
+<img alt="Paso 3" src="../assets/images/image15.png" /></p>
+<h3 id="autenticacion-en-dos-pasos">Autenticación en dos pasos</h3>
+<p>Al configurar la autenticación en dos pasos conseguimos tener más protegida nuestra cuenta. Este proceso agrega una capa adicional de seguridad a nuestra cuenta al requerir un paso adicional para iniciar sesión además de tu contraseña. GitHub ofrece varias opciones para configurar la autenticación en dos pasos.</p>
+<ol>
+<li>Aplicaciónes de autenticación</li>
+<li>Google Authenticator</li>
+<li>Authy</li>
+<li>Microsoft Authenticator</li>
+<li>1Password</li>
+<li>Llaves de seguridad</li>
+<li>Mensajes de texto por SMS</li>
+<li>GitHub Mobile</li>
+</ol>
+<p>Para ello simplemente tenemos que seguir los siguientes pasos:</p>
+<ol>
+<li>Acceder a <a href="https://github.com/login">nuestra cuenta de GitHub</a></li>
+<li>Ir a la configuración de seguridad</li>
+<li>Hacemos clic en nuestro avatar</li>
+<li>Seleccionamos la opción <code>Settings</code></li>
+<li>En la barra lateral izquierda vamos a la sección <code>Passwords and authentication</code></li>
+<li>Configurar <strong>2FA</strong></li>
+<li>En la sección <code>Two-factor authentication</code> y hacemos clic en <code>Enable two-factor authentication</code></li>
+<li>Hacemos clic en <code>Set up using an app</code> para configurar 2FA con una aplicación de autenticación.</li>
+<li>Escaneamos el código QR con nuestra aplicación de autenticación en nuestro dispositivo móvil.</li>
+<li>Introducimos el código de verificación que ha generado dicha aplicación</li>
+<li>Generamos códigos de recuperación y los guardamos en un lugar seguro para usarlos en el caso de que perdamos el acceso a la aplicación de autenticación</li>
+<li>Verificamos la activación la próxima vez que iniciemos sesión</li>
+</ol>
+<p>En mi caso, como ya lo tenía configurado voy a mostrar simplemente las capturas que muestran dicha comprobación.</p>
+<p><img alt="Password and authentication" src="../assets/images/image16.png" />
+<img alt="Comprobación autenticación en dos pasos" src="../assets/images/image17.png" /></p>
+<h2 id="usuarios-de-github">Usuarios de GitHub</h2>
+<p>A la hora de querer seguir a distintos usuarios de GitHub tenemos que poner en el navegador la siguiente url:</p>
+<div class="codehilite"><pre><span></span><code>https://github.com/nombre_usuario
+</code></pre></div>
+
+<p>donde <code>nombre_usuario</code> es el nombre de la persona que queremos seguir en GitHub. En la siguiente tabla muestro los usuarios de distintos compañeros de clase, os animo a que los sigáis y de esta forma podáis ver sus repositorios públicos y todos los proyectos que suban a la plataforma. </p>
+<table>
+<thead>
+<tr>
+<th>NOMBRE</th>
+<th>GITHUB</th>
+<th>IMAGEN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alejandro Ruiz</td>
+<td><a href="https://github.com/a22rucral">Perfil GitHub</a></td>
+<td><img alt="Alejandro" src="../assets/images/image20.png" /></td>
+</tr>
+<tr>
+<td>Manuel Ortiz</td>
+<td><a href="https://github.com/manuelortiz12">Perfil GitHub</a></td>
+<td><img alt="Manuel" src="../assets/images/image19.png" /></td>
+</tr>
+<tr>
+<td>Salvador Martínez</td>
+<td><a href="https://github.com/valfrio">Perfil GitHub</a></td>
+<td><img alt="Salvador" src="../assets/images/image18.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="seguir-otros-repositorios">Seguir otros repositorios</h3>
+<p>Para seguir otros repositorios de usuarios simplemente hay que identificar los repositorios yendo al perfil del usuario y una vez localizado y encontrándonos en él, hacemos clic sobre <code>Watch</code> en la parte superior izquierda (en el caso que esté minimizado el navegador, sino derecha) de la página del repositorio.</p>
+<p>En mi caso, el repositorio elegido fue el mismo de esta práctica, <code>github.com/nombre_usuario/DEAW</code>. En el caso de la imagen que se muestra es el repositorio de Alejandro Ruiz.</p>
+<p>Cuando se despliegue el menú podemos elegir cualquiera de las opciones pero en mi caso elegi la opción de toda la actividad que tenga ese repositorio.</p>
+<p><img alt="Seguir repositorio DEAW de mis compañeros" src="../assets/images/image21.png" /></p>
+<h3 id="anadir-a-favoritos-otro-repositorio">Añadir a favoritos otro repositorio</h3>
+<p>Seguimos los mismos pasos que el caso anterior hasta encontrarnos en dicho repositorio. En el veremos un botón con el icono de una estrella ⭐ junto a <code>Watch</code>. Simplemente tenemos que hacer clic sobre este botón y una vez que cambia de color y se pone de color amarillo ya estaría hecho.</p>
+<p><img alt="Añadir a favoritos otro repositorio" src="../assets/images/image22.png" /></p>
+<h3 id="anadir-colaborador">Añadir colaborador</h3>
+<p>Para añadir un colaborador a nuestro proyecto simplemente tenemos que ir al repositorio donde se encuentra dicho repositorio y tenemos que ir al apartado <code>Settings</code> que se encuentra en el menú del repositorio.</p>
+<p>Nos movemos hasta el apartado de <code>Collaborators and teams</code> y una vez ahí clicamos en el botón <code>Add people</code>. Aquí se abrirá una ventana y tendremos que poner el nombre de usuario que queramos añadir como colaborador y seleccionar el permiso que queramos. En mi caso añadí a mi compañero Manuel Ortiz. </p>
+<p>Una vez enviada la solicitud simplemente tenemos que esperar que acepte la invitación y ya pasaría a ser colaborador de mi respositorio <a href="https://github.com/JPradillo/DEAW">github.com/JPradillo/DEAW</a>. </p>
+<p><img alt="Colaboración" src="../assets/images/image24_a.png" />
+<img alt="Colaboración" src="../assets/images/image24_b.png" /></p>
+<h2 id="merge">Merge</h2>
+<h3 id="merge-de-ramas">Merge de ramas</h3>
+<p>Ahora con el comando <code>git branch v0.2</code> procedemos a crear una nueva rama y con <code>git checkout v0.2</code> nos cambiamos a ella.</p>
+<p>Esto se puede hacer con un solo comando que es <code>git checkout -b v0.2</code>.</p>
+<p><img alt="Rama v0.2" src="../assets/images/image25.png" /></p>
+<p>Posteriormente y ya ubicados en esta rama creamos un archivo llamado 2.txt y subimos los cambios al repositorio remoto para asi poder visualizar los cambios finales.</p>
+<p>Para ello simplemente ejecutamos los siguientes comandos:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Contenido del archivo 2.txt &gt; 2.txt&quot;</span>
+
+git<span class="w"> </span>status
+
+git<span class="w"> </span>add<span class="w"> </span><span class="m">2</span>.txt
+
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Añadido 2.txt en la rama v0.2&quot;</span>
+
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>v0.2
+</code></pre></div>
+
+<p><img alt="Creación archivo 2.txt" src="../assets/images/image26.png" />
+<img alt="Git 1" src="../assets/images/image27.png" />
+<img alt="Git 2" src="../assets/images/image28.png" />
+<img alt="Comprobación de subida de rama" src="../assets/images/image29.png" /></p>
+<p>Después de haber hecho todo esto procedemos a hacer un merge. Esto quiere decir que los cambios realizados en la rama v0.2 los uniremos a la rama main y de este modo aplicar en la ultima rama los cambios hechos en el repositorio local. Para ello, lo que hay que hacer es cambiar de rama con el comando <code>git checkout main</code> y posteriormente haremos un merge con el comando <code>git merge v0.2</code>. Posteriormente añadiremos los cambios al main del repositorio remoto con el comando <code>git push origin main</code></p>
+<p><img alt="Merge v0.2" src="../assets/images/image30.png" />
+<img alt="Merge v0.2 comprobación" src="../assets/images/image31.png" /></p>
+<h3 id="merge-con-conflicto">Merge con conflicto</h3>
+<p>Puede pasar que a la hora de hacer un merge veamos que hay un archivo con distinta configuración en cada una de las ramas. Esto lo que provocará es un conflicto y para arreglarlo tendremos que hacer lo siguiente:</p>
+<ol>
+<li>Identificar los archivos en conflicto. Para ello ejecuta el comando <code>git status</code></li>
+<li>Abre el archivo con conflictos, lo que mostrará algo como:<img alt="Conflicto" src="../assets/images/image36_b.png" /></li>
+<li>Edita y resuelve eliminando las marcas (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>) y decide que contenido conservar.</li>
+<li>Sube los cambios</li>
+</ol>
+<p>En mi caso cree un archivo escribí <strong>Hola</strong> en el archivo 1.txt e hice un commig. Posteriormente me fui a la rama <code>v0.2</code> y cambié el <strong>Hola</strong> por <strong>Adios</strong> e hice otro commit. Esto lo que provocó es que al intentar hacer un merge con la rama v0.2 desde main me generó un conflicto.</p>
+<p><img alt="Merge con conflicto - Texto en 1.txt" src="../assets/images/image32.png" />
+<img alt="Merge con conflicto - Cambio de rama" src="../assets/images/image33.png" />
+<img alt="Merge con conflicto - Cambio de texto" src="../assets/images/image34.png" />
+<img alt="Merge con conflicto - Cambio de rama" src="../assets/images/image35.png" />
+<img alt="Merge con conflicto - Merge de la rama v0.2" src="../assets/images/image36_a.png" /></p>
+<h2 id="listado-de-ramas">Listado de ramas</h2>
+<p>Para listar las ramas con y sin merge y de esta forma saber si se han subido los cambios hechos simplemente hay que ejecutar en la terminal los siguientes comandos:</p>
+<ul>
+<li><code>git branch --no-merged</code> - Para listar las ramas sin merge</li>
+<li><code>git branch --merged</code> - Para listar las ramas con merge</li>
+</ul>
+<p><img alt="Listado de ramas" src="../assets/images/image37.png" /></p>
+<h2 id="arreglo-de-conflictos">Arreglo de conflictos</h2>
+<p>Como hemos dicho anteriormente, arreglar un conflicto es simple si se trata de texto plano, sin código de programación, pero esto se vuelve más complejo si hablamos de código de programación por lo que es importante tener los dos repositorios actualizados constantemente y de esta forma se puede evitar más fácil, pero nada te asegura que no te vaya a causar problemas en el futuro.</p>
+<p><img alt="Conflicto generado" src="../assets/images/image36_b.png" /></p>
+<p>En mi caso lo que hice fue dejar los dos saludos y de esta forma arreglarlo de forma sencilla.</p>
+<h2 id="borrar-ramas">Borrar ramas</h2>
+<p>En este paso lo que haremos será crear un tag v0.2 con el comando <code>git tag v0.2</code> y borraremos la rama con el mismo nombre. Para ello ejecutaremos <code>git branch -d v0.2</code>. Si la rama aún no ha sido fusionada y deseas forzar su eliminación, puedes usar <code>-D</code> en vez de <code>-d</code>. </p>
+<p>Luego, para que no haya conflictos eliminaremos la rama v0.2 del repositorio remoto, para ello ejecutaremos el comando <code>git push origin --delete v0.2</code> y posteriormente subiremos el tag al repositorio con el comando <code>git push origin v0.2</code>.</p>
+<p><img alt="Creación del tag v0.2" src="../assets/images/image38.png" />
+<img alt="Actulizar v0.2 en remoto" src="../assets/images/image39.png" /></p>
+<h2 id="listado-de-cambios">Listado de cambios</h2>
+<p>Para poder ver todos los cambios realizados en el repositorio con sus ramas y sus tags tenemos que ejecutar el comando <code>git log --oneline --all --decorate --graph</code>. Esto mostrará un mapa lineal de todos los commits que hemos realizado en el repositorio.</p>
+<p><img alt="alt" src="../assets/images/image40.png" /></p>
+<p>En la siguiente imagen lo que se muestra es el resultado final que se muestra en el <a href="https://github.com/JPradillo/DEAW">repositorio remoto</a> para cualquier pesona que acceda la repositorio. </p>
+<p><img alt="alt" src="../assets/images/image41.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["highlight"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f13b1293.min.js"></script>
+      
+    
+  </body>
+</html>
