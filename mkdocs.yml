@@ -1,0 +1,18 @@
+site_name: Despliegue de aplicaciones web
+site_url: https://mydomain.org/mysite
+theme:
+  name: material
+  features:
+    - highlight
+  
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - pymdownx.highlight:
+      linenums: true
+
+nav:
+  - 'Tema 5': 
+    - 'Práctica Git y GitHub - 1': 'index1.md'
+    - 'Práctica Git y GitHub - 2': 'index2.md'
