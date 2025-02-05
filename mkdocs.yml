@@ -1,5 +1,5 @@
 site_name: Despliegue de aplicaciones web
-site_url: https://jpradillo.github.io/DEAW/index1/
+site_url: https://jpradillo.github.io/DEAW/
 theme:
   name: material
   features:
@@ -13,6 +13,6 @@ markdown_extensions:
       linenums: true
 
 nav:
-  - 'Tema 5': 
+  - 'Tema 5': 'README.md'
     - 'Práctica Git y GitHub - 1': 'index1.md'
     - 'Práctica Git y GitHub - 2': 'index2.md'
